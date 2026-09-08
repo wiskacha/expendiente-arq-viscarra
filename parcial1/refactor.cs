@@ -4,13 +4,6 @@
 
 namespace Parcial1.Ferreteria;
 
-public interface IEmpleadoDeFerreteria
-{
-    void RegistrarPedido(string material, int cantidad);
-    void AutorizarVentaAlPorMayor(string material);
-    void AjustarPrecio(string material, decimal nuevoPrecio);
-    void VerReporteDeCompras();
-}
 
 // Sección descuentos SERGIO VISCARRA
 public interface IDescuento
@@ -68,29 +61,6 @@ public class CalculadoraDeTotales
     }
 }
 
-public class Encargado : IEmpleadoDeFerreteria
-{
-    public void RegistrarPedido(string material, int cantidad)
-        => Console.WriteLine($"[ENC] Pedido: {cantidad} x {material}");
-    public void AutorizarVentaAlPorMayor(string material)
-        => Console.WriteLine($"[ENC] Venta al por mayor de {material} autorizada");
-    public void AjustarPrecio(string material, decimal nuevoPrecio)
-        => Console.WriteLine($"[ENC] {material} ahora cuesta {nuevoPrecio:0.00} Bs");
-    public void VerReporteDeCompras()
-        => Console.WriteLine("[ENC] Reporte de compras del mes");
-}
-
-public class Vendedor : IEmpleadoDeFerreteria
-{
-    public void RegistrarPedido(string material, int cantidad)
-        => Console.WriteLine($"[VEND] Pedido: {cantidad} x {material}");
-    public void AutorizarVentaAlPorMayor(string material)
-        => throw new NotSupportedException("Un vendedor no autoriza ventas al por mayor.");
-    public void AjustarPrecio(string material, decimal nuevoPrecio)
-        => throw new NotSupportedException("Un vendedor no ajusta precios.");
-    public void VerReporteDeCompras()
-        => throw new NotSupportedException("Un vendedor no ve reportes.");
-}
 
 //Nuevo gestorDePedidos enflaquecido SERGIO VISCARRA
 public class GestorDePedidos
