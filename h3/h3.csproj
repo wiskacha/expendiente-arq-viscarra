@@ -4,6 +4,6 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>Ventas.ConBuilder.Demo</StartupObject>
+    <StartupObject>Ventas.ConAdapter.Demo</StartupObject>
   </PropertyGroup>
 </Project>
