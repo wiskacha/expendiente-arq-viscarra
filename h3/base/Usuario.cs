@@ -1,4 +1,4 @@
-namespace Ventas.Modelo;
+namespace Ventas.Base;
 
 public class Usuario
 {

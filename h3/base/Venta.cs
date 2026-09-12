@@ -1,4 +1,4 @@
-namespace Ventas.Modelo;
+namespace Ventas.Base;
 
 public class Venta
 {
@@ -7,7 +7,7 @@ public class Venta
     public DateTime Fecha { get; set; }
     public string Estado { get; set; } = "Pendiente";
     public int IdUsuario { get; set; }
-    public List<DetalleDeVenta> Detalles { get; set; } = new();
+    public List<DetalleVenta> Detalles { get; set; } = new();
 
     public void Confirmar() => Estado = "Confirmada";
     public void MarcarPagada() => Estado = "Pagada";
