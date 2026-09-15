@@ -15,4 +15,6 @@ Tenemos bastantes tipos de socios en el sistema, cada uno de los cuales posee un
 
 - Situación 3
 
-Solución/Patrón elegido:
+Solución/Patrón elegido: Adapter
+
+Los datos qué percibimos desde el servicio externo es una constante; no la podemos modificar, posee un formato, códigos y métodos ajenos a nuestro dominio. Con "adapter" podemos introducir un "puesto fronterizo" qué se encarge de traducir el orden, formato y códigos necesarios a unos qué nuestro sistema/dominio no sólo maneje, sino que espere recibir de ellos, sanando la conexión qué, de otra forma, implicaría realizar arreglos manuales para cada caso de información recibida(variables, funciones, calculos y fechas) dependiendo de la fuente/origen y esto se repetiría cada vez qué el servicio externo actualizara sus formatos.
