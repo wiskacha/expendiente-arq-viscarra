@@ -9,7 +9,9 @@ En el plantemiento del problema se encuentra a un "módulo de préstamos" bastan
 
 - Situación 2
 
-Solución/Patrón elegido:
+Solución/Patrón elegido: Strategy
+
+Tenemos bastantes tipos de socios en el sistema, cada uno de los cuales posee un tipo de cálculo diferente y en constante cambio. Con "strategy" podemos encapsular cada tipo de cálculo en una clase intercambiable, eliminando el condicional repetido dentro de los distintos módulos. Sin su aplicación cada modificación a estos calculos y añadido de nuevos, nos obligaría a editar los condicionales idénticos dentro de dos distintos módulos arriesgándonos a obtener resultados distintos al desincronizarlos. 
 
 - Situación 3
 
