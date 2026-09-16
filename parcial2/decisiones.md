@@ -18,3 +18,9 @@ Tenemos bastantes tipos de socios en el sistema, cada uno de los cuales posee un
 Solución/Patrón elegido: Adapter
 
 Los datos qué percibimos desde el servicio externo es una constante; no la podemos modificar, posee un formato, códigos y métodos ajenos a nuestro dominio. Con "adapter" podemos introducir un "puesto fronterizo" qué se encarge de traducir el orden, formato y códigos necesarios a unos qué nuestro sistema/dominio no sólo maneje, sino que espere recibir de ellos, sanando la conexión qué, de otra forma, implicaría realizar arreglos manuales para cada caso de información recibida(variables, funciones, calculos y fechas) dependiendo de la fuente/origen y esto se repetiría cada vez qué el servicio externo actualizara sus formatos.
+
+## Post-implementación en código : Situación #1 
+
+Principio SOLID: open-close
+
+El principio de open-close se ve rescatado en la propia definición del Módulo de Préstamos (líneas 39-51) al este hallarse cerrado, incluso posteriormente podríamos ver agregados nuevos interesados en recibir una notificación respecto a los atrasos y sólo tendríamos que asegurarnos de que la nueva clase implementara nuestra interfaz IObservador y suscribirlos al módulo mediante el método "Suscribir" durante la ejecución sin modificar en absoluto el código que yace dentro del propio módulo. 
