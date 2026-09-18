@@ -18,3 +18,28 @@ flowchart TB
     sistema -->|"cobra el medio de pago elegido"| pasarela
 ```
 
+## Nivel 2 — Contenedores
+ 
+```mermaid
+flowchart TB
+    vendedor["👤 Vendedor"]
+    admin["👤 Administrador"]
+ 
+    subgraph sistema["🛒 SISTEMA DE VENTAS"]
+        webapp["🌐 Aplicación web<br>C# / ASP.NET<br>Pantallas de venta, stock y reportes"]
+        api["⚙️ Lógica de negocio<br>C#<br>Ventas, productos, stock<br>Factory: elige el medio de pago"]
+        bd[("🗄️ Base de datos<br>SQL<br>Productos, ventas, movimientos")]
+        avisos["🛎️ Servicio de avisos<br>C#<br>Observer: publica stock-bajo<br>a los suscriptores"]
+    end
+ 
+    correo["📧 Servicio de notificaciones/whatsapp (externo)"]
+    pasarela["💳 Pasarela de pagos (externa)"]
+ 
+    vendedor --> webapp
+    admin --> webapp
+    webapp --> api
+    api --> bd
+    api -->|"publica evento stock-bajo"| avisos
+    avisos --> correo
+    api -->|"cobra vía medio de pago creado"| pasarela
+```
